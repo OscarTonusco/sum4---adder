@@ -1,0 +1,34 @@
+----------------------------------------------------------------------------------
+-- Ingeniero:      OSCAR EDUARDO TONUSCO UTIMA
+-- Codigo:         1O90332961
+-- Institucion:    Universidad Tecnológica de Pereira
+-- Create Date:    01:20:11 11/04/2016 
+-- Design Name: 	 sumador con incremento de 4 unidades para un procesador Sparc V8
+-- Module Name:    sum4 - adder 
+-- Project Name: 	 Procesador Monociclo Sparc V8
+-- Revision 0.01 - File Created
+-- Additional Comments: Sin Comentarios
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+--entidad adder
+entity sumador is
+	port(
+		pcTosum : in std_logic_vector(31 downto 0);
+		operando2 : in std_logic_vector(31 downto 0);
+		sumTopc : out std_logic_vector(31 downto 0)
+	);
+end sumador;
+
+architecture Behavioral of sumador is
+
+begin
+	process(pcTosum)
+		begin
+		sumTopc <= pcTosum + operando2;--devuelve el valor de la entrada + 4 unidades decimales
+			end process;
+end Behavioral;
+
